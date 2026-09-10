@@ -26,3 +26,5 @@ transform:translateY(-8px) scale(1.03);
 .demo-images{display:flex;justify-content:center;align-items:center;gap:25px;flex-wrap:wrap;margin-top:50px}
 .demo-images img{width:min(420px,90vw);border-radius:30px;border:1px solid #ffffff20;box-shadow:0 25px 60px rgba(0,0,0,.45);transition:.3s}
 .demo-images img:hover{transform:translateY(-8px) scale(1.02)}
+
+.download-options{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:30px}.download-item{padding:28px;border:1px solid #ffffff12;border-radius:22px;background:#ffffff05;min-width:280px}.download-item h3{margin:0 0 10px}.download-item p{margin-bottom:20px!important}
