@@ -2,3 +2,23 @@
 
 .brand-logo{width:35px;height:35px;object-fit:contain;border-radius:11px;display:block}
 footer .brand-logo{width:32px;height:32px}
+
+
+.demo-images{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:28px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+.demo-images img{
+width:min(340px,90vw);
+border-radius:32px;
+box-shadow:0 25px 70px rgba(0,0,0,.45);
+border:1px solid rgba(255,255,255,.15);
+transition:.35s;
+}
+.demo-images img:hover{
+transform:translateY(-8px) scale(1.03);
+}
