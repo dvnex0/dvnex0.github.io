@@ -18,7 +18,7 @@
     <a href="#lancamento">Lançamento</a>
     <a href="#download">Download</a>
   </nav>
-  <a class="nav-download" href="https://github.com/DVTech0/DVNex/releases/tag/Browser" target="_blank">Baixar</a>
+  <a class="nav-download" href="#download">Baixar DVNex</a>
 </header>
 
 <main id="top">
@@ -59,12 +59,23 @@
       <a class="text-button" href="https://github.com/DVTech0/DVNex/releases/tag/Browser" target="_blank">Ver release oficial no GitHub →</a>
     </div>
     <div class="changelog">
-      <h4>Nesta versão</h4>
-      <p>✓ Interface DV Glass</p>
-      <p>✓ Sistema de abas</p>
-      <p>✓ Barra de navegação moderna</p>
-      <p>✓ Modo celular e computador</p>
-      <p>✓ Sistema de atualização</p>
+      <h4>Changelog</h4>
+      <div class="change-tabs">
+        <button onclick="showChange('android')">📱 Android</button>
+        <button onclick="showChange('pc')">💻 PC</button>
+      </div>
+      <div id="androidChanges">
+        <p>✓ Interface DV Glass</p>
+        <p>✓ Sistema de abas</p>
+        <p>✓ Barra de navegação moderna</p>
+        <p>✓ Sistema de atualização</p>
+      </div>
+      <div id="pcChanges" style="display:none">
+        <p>✓ Versão para Windows</p>
+        <p>✓ Interface DVNex para PC</p>
+        <p>✓ Download oficial pelo GitHub</p>
+        <p>✓ Atualizações da versão desktop</p>
+      </div>
     </div>
   </div>
 </section>
