@@ -1,117 +1,1476 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#05070d">
-<meta name="description" content="DVNex — Seu navegador, do seu jeito.">
-<title>DVNex — Seu navegador, do seu jeito</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DVNex — O novo começo</title>
+
+    <meta
+        name="description"
+        content="DVNex NEW — criado do zero, com novo design, DV Glass, mais desempenho, novas abas e DV Translate."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(60, 100, 255, .16),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(100, 70, 255, .12),
+                    transparent 35%
+                ),
+                #070a12;
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FUNDO
+        ========================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 0%,
+                    rgba(255,255,255,.025) 50%,
+                    transparent 100%
+                );
+
+            opacity: .7;
+
+            z-index: -1;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            position: fixed;
+
+            top: 18px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(
+                1100px,
+                calc(100% - 30px)
+            );
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                0 18px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius: 24px;
+
+            background:
+                rgba(15,20,34,.68);
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,.35);
+
+            z-index: 1000;
+        }
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+
+            color: white;
+        }
+
+        .brand-logo {
+
+            width: 44px;
+            height: 44px;
+
+            object-fit: contain;
+
+            display: block;
+
+            border-radius: 12px;
+
+            filter:
+                drop-shadow(
+                    0 6px 18px
+                    rgba(70,110,255,.35)
+                );
+        }
+
+        .brand-name {
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            letter-spacing: -.4px;
+        }
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        nav a {
+
+            color:
+                rgba(255,255,255,.72);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            padding:
+                10px 14px;
+
+            border-radius: 14px;
+
+            transition:
+                .25s ease;
+        }
+
+        nav a:hover {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.07);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                130px 20px 80px;
+        }
+
+        .hero-content {
+
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+        .hero-logo {
+
+            width: 120px;
+            height: 120px;
+
+            object-fit: contain;
+
+            display: block;
+
+            margin:
+                0 auto 28px;
+
+            border-radius: 30px;
+
+            filter:
+                drop-shadow(
+                    0 15px 45px
+                    rgba(70,110,255,.30)
+                );
+
+            animation:
+                logoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
+
+        .launch-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                9px 16px;
+
+            border:
+                1px solid
+                rgba(100,140,255,.25);
+
+            border-radius: 999px;
+
+            background:
+                rgba(65,95,180,.12);
+
+            color:
+                #aebfff;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    48px,
+                    9vw,
+                    92px
+                );
+
+            line-height: .95;
+
+            letter-spacing:
+                -5px;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #b8c7ff 50%,
+                    #728cff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+        }
+
+        .hero h2 {
+
+            font-size:
+                clamp(
+                    22px,
+                    4vw,
+                    38px
+                );
+
+            margin-bottom: 18px;
+
+            color:
+                rgba(255,255,255,.94);
+        }
+
+        .hero p {
+
+            max-width: 700px;
+
+            margin:
+                0 auto;
+
+            color:
+                rgba(255,255,255,.62);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 34px;
+        }
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 170px;
+
+            padding:
+                14px 22px;
+
+            border-radius: 17px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                border .25s ease;
+        }
+
+        .button:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+        .button-primary {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4b6cff,
+                    #6d55ff
+                );
+
+            box-shadow:
+                0 15px 40px
+                rgba(70,90,255,.25);
+        }
+
+        .button-secondary {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            backdrop-filter:
+                blur(15px);
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+
+            width:
+                min(
+                    1100px,
+                    calc(100% - 30px)
+                );
+
+            margin:
+                0 auto;
+
+            padding:
+                100px 0;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+
+            color:
+                #7992ff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+
+            margin-top: 12px;
+
+            font-size:
+                clamp(
+                    32px,
+                    5vw,
+                    52px
+                );
+
+            letter-spacing:
+                -2px;
+        }
+
+        .section-title p {
+
+            max-width: 650px;
+
+            margin:
+                16px auto 0;
+
+            color:
+                rgba(255,255,255,.55);
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 16px;
+        }
+
+        .card {
+
+            position: relative;
+
+            padding: 28px;
+
+            min-height: 220px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            border-radius: 26px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.075),
+                    rgba(255,255,255,.025)
+                );
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            overflow: hidden;
+
+            transition:
+                transform .35s ease,
+                border .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            top: -80px;
+            right: -60px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(85,110,255,.16);
+
+            filter:
+                blur(25px);
+        }
+
+        .card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(110,135,255,.25);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,.25);
+        }
+
+        .card-icon {
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(90,115,255,.13);
+
+            border:
+                1px solid
+                rgba(110,135,255,.16);
+
+            font-size: 23px;
+
+            margin-bottom: 22px;
+        }
+
+        .card h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+
+            color:
+                rgba(255,255,255,.55);
+
+            line-height: 1.65;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           DOWNLOADS
+        ========================= */
+
+        .downloads-box {
+
+            position: relative;
+
+            padding:
+                65px 30px;
+
+            text-align: center;
+
+            border-radius: 34px;
+
+            border:
+                1px solid
+                rgba(110,135,255,.18);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(80,100,255,.12),
+                    rgba(255,255,255,.025)
+                );
+
+            backdrop-filter:
+                blur(30px);
+
+            overflow: hidden;
+        }
+
+        .downloads-box::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            background:
+                rgba(80,100,255,.08);
+
+            filter:
+                blur(80px);
+
+            border-radius: 50%;
+        }
+
+        .downloads-content {
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+        .download-logo {
+
+            width: 75px;
+            height: 75px;
+
+            object-fit: contain;
+
+            margin:
+                0 auto 20px;
+
+            border-radius: 20px;
+
+            filter:
+                drop-shadow(
+                    0 10px 30px
+                    rgba(70,110,255,.30)
+                );
+        }
+
+        .downloads-box h2 {
+
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    48px
+                );
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom: 15px;
+        }
+
+        .official {
+
+            display: inline-block;
+
+            padding:
+                10px 18px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(76,105,255,.13);
+
+            border:
+                1px solid
+                rgba(100,130,255,.22);
+
+            color:
+                #aebdff;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+        .downloads-box p {
+
+            max-width: 620px;
+
+            margin:
+                0 auto;
+
+            color:
+                rgba(255,255,255,.58);
+
+            line-height: 1.7;
+        }
+
+        .launch-date {
+
+            margin-top: 25px;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            color: white;
+        }
+
+        .download-disabled {
+
+            display: inline-flex;
+
+            margin-top: 28px;
+
+            padding:
+                14px 24px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+        /* =========================
+           LANÇAMENTO
+        ========================= */
+
+        .release {
+
+            text-align: center;
+
+            padding-bottom:
+                120px;
+        }
+
+        .release h2 {
+
+            font-size:
+                clamp(
+                    38px,
+                    7vw,
+                    70px
+                );
+
+            letter-spacing:
+                -3px;
+
+            margin-bottom: 20px;
+        }
+
+        .release p {
+
+            color:
+                rgba(255,255,255,.55);
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            max-width: 600px;
+
+            margin:
+                auto;
+        }
+
+        .release-date {
+
+            display: inline-block;
+
+            margin-top: 28px;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            padding:
+                13px 22px;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(70,100,255,.18),
+                    rgba(110,75,255,.14)
+                );
+
+            border:
+                1px solid
+                rgba(100,125,255,.2);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            width:
+                min(
+                    1100px,
+                    calc(100% - 30px)
+                );
+
+            margin:
+                auto;
+
+            padding:
+                30px 0 45px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .footer-logo {
+
+            width: 34px;
+            height: 34px;
+
+            object-fit: contain;
+
+            border-radius: 9px;
+        }
+
+        .footer-brand span {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            color:
+                rgba(255,255,255,.75);
+        }
+
+        footer p {
+
+            color:
+                rgba(255,255,255,.35);
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav a {
+
+                display: none;
+            }
+
+            .features {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .hero h1 {
+
+                letter-spacing:
+                    -3px;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            header {
+
+                height: 62px;
+
+                top: 10px;
+
+                border-radius: 20px;
+            }
+
+            .brand-logo {
+
+                width: 38px;
+                height: 38px;
+            }
+
+            .brand-name {
+
+                font-size: 16px;
+            }
+
+            .hero {
+
+                padding-top:
+                    110px;
+            }
+
+            .hero-logo {
+
+                width: 95px;
+                height: 95px;
+            }
+
+            .hero p {
+
+                font-size: 15px;
+            }
+
+            .features {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            section {
+
+                padding:
+                    70px 0;
+            }
+
+            .downloads-box {
+
+                padding:
+                    50px 20px;
+            }
+
+            footer {
+
+                flex-direction:
+                    column;
+
+                text-align: center;
+            }
+        }
+
+        /* =========================
+           ANIMAÇÃO DE ENTRADA
+        ========================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+    </style>
 </head>
+
 <body>
-<div class="bg"></div>
 
-<header class="nav">
-  <a class="brand" href="#top"><img class="brand-logo" src="dvnex-logo.png" alt="DVNex"><span>DV<span>Nex</span></span></a>
-  <nav>
-    <a href="#recursos">Recursos</a>
-    <a href="#lancamento">Lançamento</a>
-    <a href="#download">Download</a>
-  </nav>
-  <a class="nav-download" href="#download">Baixar DVNex</a>
-</header>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-<main id="top">
-<section class="hero">
-  <div class="eyebrow"><span></span> LANÇAMENTO OFICIAL • DVNEX 3.4</div>
-  <h1>Uma nova forma de<br><strong>navegar.</strong></h1>
-  <p>Conheça o DVNex. Um navegador para Android e PC com visual moderno, experiência DV Glass e uma interface criada para ser do seu jeito.</p>
-  <div class="actions">
-    <a class="button primary" href="#download" target="_blank">Download grátis <b>↓</b></a>
-    <a class="button secondary" href="#lancamento">Conhecer o lançamento <b>→</b></a>
-  </div>
-  <div class="meta"><span>Android + PC</span><i></i><span>v3.4</span><i></i><span>Build 7</span></div>
+    <header>
 
-  <div class="demo-images">
-    <img src="assets/demo-home.jpg" alt="Tela inicial DVNex">
-    <img src="assets/demo-browser.jpg" alt="Navegador DVNex">
-  </div>
-</section>
+        <a
+            href="#inicio"
+            class="brand"
+        >
 
-<section id="recursos" class="section">
-  <div class="section-title"><small>01 — RECURSOS</small><h2>Simples por fora.<br><em>Potente por dentro.</em></h2></div>
-  <div class="features">
-    <article><div>✦</div><h3>DV Glass</h3><p>Uma linguagem visual própria, com superfícies suaves e transparência inspirada em interfaces modernas.</p></article>
-    <article><div>▣</div><h3>Abas</h3><p>Abra, alterne e organize páginas sem perder o que estava fazendo.</p></article>
-    <article><div>↗</div><h3>Modo computador</h3><p>Solicite a versão desktop dos sites quando precisar de uma experiência maior.</p></article>
-    <article><div>◉</div><h3>Experiência adaptável</h3><p>Interface pensada para acompanhar diferentes sites e situações de navegação.</p></article>
-  </div>
-</section>
+            <img
+                src="dvnex-logo.png"
+                class="brand-logo"
+                alt="DVNex"
+            >
 
-<section id="lancamento" class="section launch">
-  <div class="section-title"><small>02 — LANÇAMENTO</small><h2>DVNex <em>3.4</em></h2></div>
-  <div class="launch-box">
-    <div class="launch-main">
-      <span class="version">3.4</span>
-      <span class="build">BUILD 7</span>
-      <h3>O DVNex 3.4 chegou.</h3>
-      <p>Confira as novidades da versão 3.4 para Android.</p>
-      <a id="officialChangelogLink" class="text-button" href="https://github.com/DVTech0/DVNex/releases/tag/Browser" target="_blank">Ver release oficial no GitHub →</a>
-    </div>
-    <div class="changelog">
-      <h4>Changelog</h4>
-      <div class="change-tabs">
-        <button onclick="showChange('android')">📱 Android</button>
-        <button onclick="showChange('pc')">💻 PC</button>
-      </div>
-      <div id="androidChanges">
-        <p>✓ Tradução Dos Sites</p>
-        <p>✓ Tema Escuro Nas Abas</p>
-        <p>✓ DV AI Search</p>
-        <p>✓ Correção de Bugs</p>
-        <div class="update-warning">
-          <strong>AVISO:</strong> Desinstalem a Última Versão do DVNex<br>
-          Se não dará Incompatibilidade
+            <span class="brand-name">
+                DVNex
+            </span>
+
+        </a>
+
+        <nav>
+
+            <a href="#novidades">
+                Novidades
+            </a>
+
+            <a href="#downloads">
+                Downloads
+            </a>
+
+            <a href="#lancamento">
+                Lançamento
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main id="inicio">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <img
+                    src="dvnex-logo.png"
+                    class="hero-logo"
+                    alt="Logo DVNex"
+                >
+
+                <div class="launch-badge">
+                    🚀 DVNex NEW
+                </div>
+
+                <h1>
+                    DVNex
+                </h1>
+
+                <h2>
+                    Um novo começo.
+                </h2>
+
+                <p>
+                    O DVNex NEW está sendo criado do zero,
+                    trazendo uma nova identidade visual,
+                    novo DV Glass, mais desempenho,
+                    novas abas e recursos completamente
+                    renovados.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#novidades"
+                        class="button button-primary"
+                    >
+                        Conhecer novidades
+                    </a>
+
+                    <a
+                        href="#downloads"
+                        class="button button-secondary"
+                    >
+                        Ver lançamento
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOVIDADES
+        ========================== -->
+
+        <section id="novidades">
+
+            <div class="section-title reveal">
+
+                <span>
+                    DVNex NEW
+                </span>
+
+                <h2>
+                    Criado do zero.
+                </h2>
+
+                <p>
+                    O novo DVNex não é apenas uma atualização.
+                    A nova versão está sendo reconstruída para
+                    oferecer uma experiência muito mais moderna.
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Criado do zero
+                    </h3>
+
+                    <p>
+                        Uma nova base para o DVNex NEW,
+                        construída pensando em desempenho,
+                        organização e evolução futura.
+                    </p>
+
+                </article>
+
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        💎
+                    </div>
+
+                    <h3>
+                        Novo DV Glass
+                    </h3>
+
+                    <p>
+                        A identidade visual foi completamente
+                        renovada com transparências, efeitos
+                        de vidro e animações modernas.
+                    </p>
+
+                </article>
+
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Novo design
+                    </h3>
+
+                    <p>
+                        Interface reconstruída para deixar
+                        o navegador mais elegante, moderno
+                        e agradável de usar.
+                    </p>
+
+                </article>
+
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Mais desempenho
+                    </h3>
+
+                    <p>
+                        Otimizações na estrutura do navegador
+                        para tornar a experiência mais rápida
+                        e fluida.
+                    </p>
+
+                </article>
+
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        🗂️
+                    </div>
+
+                    <h3>
+                        Novo sistema de abas
+                    </h3>
+
+                    <p>
+                        Uma nova experiência para navegar entre
+                        páginas e organizar suas abas dentro
+                        do DVNex.
+                    </p>
+
+                </article>
+
+
+                <article class="card reveal">
+
+                    <div class="card-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        DV Translate
+                    </h3>
+
+                    <p>
+                        Tradução de páginas integrada ao projeto,
+                        trazendo mais praticidade para navegar
+                        por conteúdos em outros idiomas.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOWNLOADS
+        ========================== -->
+
+        <section id="downloads">
+
+            <div class="downloads-box reveal">
+
+                <div class="downloads-content">
+
+                    <img
+                        src="dvnex-logo.png"
+                        class="download-logo"
+                        alt="DVNex"
+                    >
+
+                    <div class="official">
+                        🚀 Lançamento Oficial
+                    </div>
+
+                    <h2>
+                        Downloads estão chegando.
+                    </h2>
+
+                    <p>
+                        A nova página de downloads fará parte
+                        do DVNex NEW. O download oficial ainda
+                        não está disponível, pois o lançamento
+                        acontecerá na data oficial.
+                    </p>
+
+                    <div class="launch-date">
+                        Lançamento Oficial Dia 14/09
+                    </div>
+
+                    <div class="download-disabled">
+                        🔒 Download disponível no lançamento
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LANÇAMENTO
+        ========================== -->
+
+        <section
+            id="lancamento"
+            class="release"
+        >
+
+            <div class="reveal">
+
+                <h2>
+                    Segunda-feira é o dia.
+                </h2>
+
+                <p>
+                    O novo DVNex está chegando.
+                    Uma nova versão, uma nova identidade
+                    e uma nova experiência.
+                </p>
+
+                <div class="release-date">
+                    📅 Segunda-feira • 14/09
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img
+                src="dvnex-logo.png"
+                class="footer-logo"
+                alt="DVNex"
+            >
+
+            <span>
+                DVNex
+            </span>
+
         </div>
-      </div>
-      <div id="pcChanges" style="display:none">
-        <p>✓ Versão para Windows</p>
-        <p>✓ Interface DVNex para PC</p>
-        <p>✓ Download oficial pelo GitHub</p>
-        <p>✓ Atualizações da versão desktop</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="download" class="download-section">
-  <div class="download-card">
-    <div class="eyebrow"><span></span> DISPONÍVEL AGORA</div>
-    <h2>Baixe o <em>DVNex.</em></h2>
-    <p>O download oficial está disponível na página de Releases do projeto.</p>
-    <div class="download-options">
-      <div class="download-item">
-        <h3>📱 Android</h3>
-        <p>Baixe a versão oficial do DVNex para Android.</p>
-        <a class="button primary large" href="https://github.com/DVTech0/DVNex/releases/tag/Browser" target="_blank">Baixar APK <b>↓</b></a>
-      </div>
+        <p>
+            © 2026 DVNex • Criado pela DV
+        </p>
 
-      <div class="download-item">
-        <h3>💻 Windows</h3>
-        <p>Versão oficial para computadores Windows.</p>
-        <a class="button secondary large" href="https://github.com/dvnex0/DVNexPC/releases/tag/BrowserPC" target="_blank">Baixar PC <b>↓</b></a>
-      </div>
-    </div>
-    <small>Distribuição oficial • GitHub Releases</small>
-  </div>
-</section>
-</main>
+    </footer>
 
-<footer>
-  <div class="brand"><img class="brand-logo" src="dvnex-logo.png" alt="DVNex"><span>DVNex</span></div>
-  <p>Seu navegador, do seu jeito. © 2026</p>
-  <a href="https://github.com/DVTech0/DVNex" target="_blank">GitHub ↗</a>
-</footer>
-<script src="script.js"></script>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("active");
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            (element) => {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+    </script>
+
 </body>
+
 </html>
