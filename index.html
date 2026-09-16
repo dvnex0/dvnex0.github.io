@@ -2767,27 +2767,30 @@ img,video,iframe,svg,canvas{content-visibility:visible}
   const apply=()=>document.documentElement.classList.toggle('dvnex-reduced-motion',reduce.matches);
   apply(); reduce.addEventListener?.('change',apply);
 })();</script>
-<style id="dvtech-demo-style">
-.dvtech-demo{margin:40px auto;padding:28px;max-width:1100px;border:1px solid rgba(120,140,170,.25);border-radius:24px;background:linear-gradient(145deg,rgba(20,28,45,.96),rgba(9,14,25,.96));color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.18)}
-.dvtech-demo-grid{display:grid;grid-template-columns:180px 1fr;gap:26px;align-items:center}
-.dvtech-icon{width:150px;height:150px;border-radius:30px;display:grid;place-items:center;background:linear-gradient(135deg,#6d5dfc,#18c8ff);font-size:58px;font-weight:900;box-shadow:0 10px 30px #0005}
-.dvtech-demo h2{margin:0 0 8px;font-size:clamp(1.5rem,4vw,2.3rem)}
-.dvtech-demo p{color:#c9d3e7;line-height:1.6}.dvtech-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.dvtech-actions a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;background:#6d5dfc;color:white}.dvtech-actions a.alt{background:rgba(255,255,255,.1)}
-@media(max-width:620px){.dvtech-demo{padding:20px}.dvtech-demo-grid{grid-template-columns:1fr;text-align:center}.dvtech-icon{margin:auto}.dvtech-actions{justify-content:center}}
-</style>
-<section class="dvtech-demo" id="demonstracao-dvtech" aria-label="Demonstração do aplicativo DVTech">
-  <div class="dvtech-demo-grid">
-    <div class="dvtech-icon" aria-hidden="true">DV</div>
-    <div>
-      <h2>Demonstração do aplicativo DVTech</h2>
-      <p>Conheça o aplicativo diretamente nesta seção do site. O APK original está incluído no pacote para instalação no Android. Como um APK é um aplicativo nativo, ele não pode ser executado dentro de uma página HTML; por isso, esta demonstração apresenta a área de divulgação e disponibiliza o arquivo original para testar no celular.</p>
-      <div class="dvtech-actions">
-        <a href="DVTech.apk" download>⬇ Baixar APK</a>
-        <a class="alt" href="#inicio">Voltar ao início</a>
-      </div>
-    </div>
+<section id="dvtech-webapp" style="margin:40px auto;max-width:1100px;padding:24px;border-radius:24px;background:linear-gradient(135deg,#101827,#172b46);color:#fff;box-shadow:0 12px 40px #0002">
+  <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <div style="width:76px;height:76px;border-radius:20px;background:#fff1;display:grid;place-items:center;font-size:38px">📱</div>
+    <div style="flex:1;min-width:220px"><div style="font-size:13px;opacity:.75">APLICATIVO WEB</div><h2 style="margin:4px 0;font-size:30px">DVTech</h2><p style="margin:0;opacity:.85">Use pelo navegador, inclusive no iPhone, sem App Store.</p></div>
+    <button id="dvtech-install" style="border:0;border-radius:999px;padding:13px 18px;font-weight:700;cursor:pointer;background:#65e6a5;color:#092018">Adicionar à tela inicial</button>
   </div>
+  <div style="margin-top:24px;background:#f7f9fc;color:#172033;border-radius:22px;padding:18px;max-width:560px;margin-left:auto;margin-right:auto">
+    <div style="display:flex;justify-content:space-between;align-items:center"><strong>DVTech</strong><span style="font-size:12px;color:#64748b">Web App</span></div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px">
+      <button class="dvtech-card" data-view="dashboard">📊<br><b>Painel</b><small>Visão geral</small></button>
+      <button class="dvtech-card" data-view="tools">🧰<br><b>Ferramentas</b><small>Recursos</small></button>
+      <button class="dvtech-card" data-view="profile">👤<br><b>Perfil</b><small>Configurações</small></button>
+      <button class="dvtech-card" data-view="help">❓<br><b>Ajuda</b><small>Suporte</small></button>
+    </div>
+    <div id="dvtech-view" style="margin-top:16px;padding:16px;border-radius:14px;background:#eaf0f7">Bem-vindo ao DVTech. Escolha uma opção acima.</div>
+  </div>
+  <p style="font-size:13px;opacity:.75;margin:18px 0 0">No iPhone: abra pelo Safari → Compartilhar → Adicionar à Tela de Início.</p>
 </section>
+<style>
+.dvtech-card{border:1px solid #dbe4ef;background:#fff;border-radius:16px;padding:18px;text-align:left;cursor:pointer;color:#172033;font-size:17px}.dvtech-card small{display:block;color:#64748b;margin-top:5px;font-size:12px}.dvtech-card:active{transform:scale(.98)}
+</style>
+<script>
+(()=>{const view=document.getElementById('dvtech-view');const texts={dashboard:'Painel demonstrativo carregado. Seus dados e atalhos apareceriam aqui.',tools:'Área de ferramentas do DVTech. Esta é uma demonstração web interativa.',profile:'Perfil e preferências do usuário.',help:'Central de ajuda e informações do aplicativo.'};document.querySelectorAll('.dvtech-card').forEach(b=>b.addEventListener('click',()=>view.textContent=texts[b.dataset.view]));document.getElementById('dvtech-install').addEventListener('click',()=>alert('No iPhone, use Safari → Compartilhar → Adicionar à Tela de Início. No Android, use o menu do navegador → Adicionar à tela inicial.'));})();
+</script>
 
 </body>
 </html>
