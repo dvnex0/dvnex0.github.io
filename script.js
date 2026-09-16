@@ -1,16 +1,6 @@
-const els=document.querySelectorAll('.features article,.launch-box,.download-card,.device');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;e.target.animate([{opacity:0,transform:'translateY(25px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});io.unobserve(e.target)})},{threshold:.12});els.forEach(e=>io.observe(e));
-function showChange(type){
- const android=document.getElementById("androidChanges");
- const pc=document.getElementById("pcChanges");
- const official=document.getElementById("officialChangelogLink");
- const pcUrl="https://github.com/dvnex0/DVNexPC/releases/tag/BrowserPC";
- const androidUrl="https://github.com/DVTech0/DVNex/releases/tag/Browser";
- if(android && pc){
-  const isPc=type==="pc";
-  android.style.display=isPc ? "none" : "block";
-  pc.style.display=isPc ? "block" : "none";
-  if(official){
-   official.href=isPc ? pcUrl : androidUrl;
-  }
- }
-}
+const address=document.querySelector('#address'), search=document.querySelector('#search'), page=document.querySelector('#page'), toast=document.querySelector('#toast');
+function msg(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}
+function openUrl(v){v=v.trim();if(!v)return;if(!/^https?:\/\//i.test(v)&&!v.startsWith('about:'))v='https://www.google.com/search?q='+encodeURIComponent(v);address.value=v; if(v.startsWith('https://')){page.innerHTML='<div class="hero"><h1>DVNex Demo</h1><p>Na demonstração web, links externos são abertos com segurança fora do navegador simulado.</p><button class="shortcuts" onclick="window.open(\''+v+'\',\'_blank\')">Abrir site</button></div>'}else location.reload()}
+document.querySelector('#go').onclick=()=>openUrl(address.value);address.onkeydown=e=>{if(e.key==='Enter')openUrl(address.value)};document.querySelector('#searchBtn').onclick=()=>openUrl(search.value);search.onkeydown=e=>{if(e.key==='Enter')openUrl(search.value)};
+document.querySelector('#home').onclick=()=>location.reload();document.querySelector('#back').onclick=()=>history.back();document.querySelector('#refresh').onclick=()=>location.reload();document.querySelector('#menu').onclick=()=>msg('Menu DVNex — demonstração');document.querySelector('#tabs').onclick=()=>msg('1 aba aberta');document.querySelector('#more').onclick=()=>msg('Mais opções');
+document.querySelectorAll('[data-url]').forEach(b=>b.onclick=()=>openUrl(b.dataset.url));
