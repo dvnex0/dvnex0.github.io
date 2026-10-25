@@ -29,6 +29,39 @@
   .history-item,.favorite-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.08);font-size:13px}.muted{color:#91a0b6}
   @media(max-width:520px){body{padding:6px 0 14px}.demo{width:100vw}.screen{border-radius:0;box-shadow:none}.search-wrap{padding-left:13%;padding-right:15%}}
 </style>
+
+<style id="dvnex-warm-demo-theme">
+:root{color-scheme:dark;--cyan:#ff6245}
+html,body{background:#100c10!important}
+body{
+  background:
+    radial-gradient(680px 520px at 0% 0%,rgba(109,53,37,.43),transparent 66%),
+    linear-gradient(145deg,#2b1713 0%,#171014 48%,#100c10 100%)!important;
+}
+.screen{background:#100c10!important;box-shadow:0 22px 62px rgba(0,0,0,.55),0 0 0 1px rgba(255,108,83,.18)!important}
+.hotspot:focus-visible{outline:2px solid #ff7657!important;box-shadow:0 0 0 4px rgba(255,81,54,.18)!important}
+.search-wrap{
+  background:rgba(28,17,19,.96)!important;
+  border:1px solid rgba(255,108,82,.36)!important;
+  box-shadow:0 2px 0 rgba(255,225,216,.04) inset,0 8px 22px rgba(0,0,0,.3),0 0 22px rgba(219,62,91,.08)!important;
+}
+.search-wrap input{color:#fff3f1!important;caret-color:#ff7657}
+.search-wrap input::placeholder{color:#b9a4a6}
+.search-go{
+  background:linear-gradient(135deg,#ff5938 0%,#e3416d 58%,#a45acb 100%)!important;
+  color:#fff!important;border-radius:50%!important;
+  box-shadow:0 4px 14px rgba(224,62,85,.25)!important;
+}
+.toast{background:rgba(29,16,18,.96)!important;border-color:rgba(255,108,82,.27)!important;color:#fff5f3!important}
+.modal{background:linear-gradient(145deg,rgba(47,26,24,.99),rgba(19,13,17,.99))!important;border-color:rgba(255,108,82,.25)!important}
+.modal h3{color:#fff5f3}
+.modal p,.muted{color:#c1abad!important}
+.row button,.row .rowBtn{
+  background:rgba(65,34,33,.9)!important;border:1px solid rgba(255,108,82,.27)!important;color:#fff2ef!important;
+}
+.row .primary{background:linear-gradient(130deg,#ff5938 0%,#e3416d 58%,#a45acb 100%)!important;color:#fff!important;font-weight:800}
+.history-item,.favorite-item{border-top-color:rgba(255,108,82,.16)!important}
+</style>
 </head>
 <body>
 <main class="demo" aria-label="Demonstração interativa do DVTech">
