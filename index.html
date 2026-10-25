@@ -2562,6 +2562,96 @@ body::before,body::after{display:none!important}
 img{content-visibility:auto;contain-intrinsic-size:320px 180px}
 section,article,.card,.feature-card,.download-card{content-visibility:auto;contain-intrinsic-size:600px 300px}
 </style>
+
+<style id="dvnex-warm-cinema-theme">
+/* Warm charcoal / ember palette sampled from the DVNex reference screenshot */
+:root{
+  --dvnex-bg:#100c10!important;
+  --dvnex-panel:rgba(39,22,21,.82)!important;
+  --dvnex-panel-2:rgba(47,24,23,.66)!important;
+  --dvnex-line:rgba(255,112,91,.22)!important;
+  --dvnex-text:#fff6f5!important;
+  --dvnex-muted:#b8a5a7!important;
+  --dvnex-cyan:#ff6245!important;
+  --dvnex-blue:#f04b46!important;
+  --dvnex-violet:#a45acb!important;
+  --dvnex-ember:#ff512f;
+  --dvnex-rose:#df3e79;
+}
+html{background:#100c10!important;color-scheme:dark}
+body{
+  background:
+    radial-gradient(900px 620px at 0% 0%,rgba(117,57,39,.48),transparent 65%),
+    radial-gradient(780px 520px at 95% 18%,rgba(120,37,57,.13),transparent 64%),
+    linear-gradient(145deg,#2d1814 0%,#191013 43%,#100c10 78%,#0f0c10 100%)!important;
+  color:var(--dvnex-text)!important
+}
+body:before{
+  background:linear-gradient(120deg,transparent 0 42%,rgba(255,96,70,.035) 50%,transparent 58%)!important;
+}
+header,.header,.site-header,.navbar,.nav{
+  background:linear-gradient(135deg,rgba(45,24,20,.91),rgba(17,12,16,.9))!important;
+  border-color:rgba(255,113,91,.2)!important;
+  box-shadow:0 14px 45px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,220,215,.035)!important;
+}
+header nav a,.nav a{color:#ead9d9}
+header nav a:hover,.nav a:hover{color:#fff!important;background:rgba(255,95,68,.09)!important}
+.card,.feature-card,.download-card,.downloads-box,.launch-box,.glass-card{
+  background:linear-gradient(145deg,rgba(55,31,29,.77),rgba(20,13,17,.92))!important;
+  border-color:rgba(255,116,93,.19)!important;
+  box-shadow:0 14px 42px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,228,221,.025)!important;
+}
+.card:hover,.feature-card:hover,.download-card:hover,.launch-box:hover{
+  border-color:rgba(255,103,76,.48)!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.32),0 0 28px rgba(234,69,76,.09)!important;
+}
+.button-primary,.header-download,.button.primary,.btn-primary,.download-btn,.cta,
+#dvnex-dvnex-demonstracao a[style*="background"]{
+  background:linear-gradient(130deg,#ff5938 0%,#e64168 56%,#a45acb 100%)!important;
+  border:1px solid rgba(255,187,169,.22)!important;
+  color:#fff8f7!important;
+  box-shadow:0 8px 26px rgba(226,60,83,.18)!important;
+}
+.button-secondary,.button.secondary,.btn-secondary{
+  background:rgba(46,25,26,.78)!important;
+  border:1px solid rgba(255,111,88,.32)!important;
+  color:#fff1ef!important;
+}
+.button-primary:hover,.header-download:hover,.button.primary:hover,.btn-primary:hover,.download-btn:hover,.cta:hover,
+#dvnex-dvnex-demonstracao a[style*="background"]:hover{
+  box-shadow:0 12px 34px rgba(231,65,87,.28)!important;
+}
+.button-secondary:hover,.button.secondary:hover,.btn-secondary:hover{
+  background:rgba(73,34,34,.88)!important;
+  border-color:rgba(255,111,88,.55)!important;
+}
+.hero h1 strong,.hero h2 em,.section-title h2 em,.gradient-text,.brand-name,.highlight{
+  background:linear-gradient(110deg,#ff5938 0%,#e84372 58%,#a45acb 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+}
+.launch-badge,.launch-date,.official,.eyebrow,.pill,.tag,.badge{
+  border-color:rgba(255,105,82,.28)!important;
+  background:linear-gradient(135deg,rgba(255,91,57,.11),rgba(164,90,203,.09))!important;
+  color:#ffc0b2!important;
+  box-shadow:0 0 24px rgba(228,63,86,.06),inset 0 1px 0 rgba(255,225,216,.04)!important;
+}
+.card-icon,.feature-icon,.icon,.emoji,svg.icon,.btn svg,.button svg,.download-btn svg{
+  color:#ff7657!important;
+}
+.card-icon,.feature-icon{
+  filter:drop-shadow(0 0 16px rgba(255,93,65,.19))!important;
+}
+a:hover,.text-button:hover,footer a:hover{color:#ff967f!important}
+::selection{background:rgba(225,63,103,.35)!important;color:#fff!important}
+:focus-visible{outline-color:#ff7457!important}
+#dvnex-scroll-progress{background:linear-gradient(90deg,#ff5938,#e34370,#a45acb)!important;box-shadow:0 0 18px rgba(239,73,81,.45)!important}
+#dvnex-dvnex-demonstracao>div{
+  background:linear-gradient(145deg,rgba(46,25,22,.97),rgba(17,12,16,.98))!important;
+  border-color:rgba(255,112,88,.24)!important;
+}
+#dvnex-dvnex-demonstracao iframe{background:#100c10!important}
+@media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
+</style>
 </head>
 <body>
 <header>
