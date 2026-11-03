@@ -41,7 +41,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:30px 28px;color:#777;f
 <div class="demo-wrap demo-shot-wrap reveal"><img class="demo-shot" src="assets/dvnex-demo.webp" alt="Captura real da tela inicial do navegador DVNex"></div>
 </section>
 </main>
-<footer><div class="foot"><div><strong>DVNEX</strong> &nbsp;© <span id="year"></span> DVTech. Todos os direitos reservados.</div><div>Seu Navegaodr, Do Seu Jeito. &nbsp;·&nbsp; <a href="https://github.com/dvnex0">GitHub</a></div></div></footer>
+<footer><div class="foot"><div><strong>DVNEX</strong> &nbsp;© <span id="year"></span> DVTech. Todos os direitos reservados.</div><div>Seu Navegador, Do Seu Jeito. &nbsp;·&nbsp; <a href="https://github.com/dvnex0">GitHub</a></div></div></footer>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}}),{threshold:.12});
